@@ -2,6 +2,11 @@ body {
   background-color: lightyellow;
   text-align: center;
   font-family: monospace;
+  margin: 12px;
+}
+
+#quizForm {
+  text-align: left;
 }
 
 #harry {
@@ -22,4 +27,20 @@ body {
 
 #snape {
   display: none;
+}
+
+.final {
+  font-family: fantasy;
+}
+
+.final img {
+  display: block;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final p {
+  font-size: 14pt;
+  text-align: justify;
 }
