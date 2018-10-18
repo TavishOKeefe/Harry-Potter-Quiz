@@ -42,18 +42,24 @@ $(document).ready(function() {
     if (highest === 0) {
       $("#quiz").hide();
       $("#harry").show();
+      $("#backButton").show();
     } else if (highest === 1) {
       $("#quiz").hide();
       $("#ron").show();
+      $("#backButton").show();
     } else if (highest === 2) {
       $("#quiz").hide();
       $("#hermione").show();
+      $("#backButton").show();
     } else if (highest === 3) {
       $("#quiz").hide();
       $("#dumbledore").show();
+      $("#backButton").show();
     } else {
       $("#quiz").hide();
       $("#snape").show();
+      $("#backButton").show();
     }
   });
+  $("form#goBack").submit(function(event) {});
 });

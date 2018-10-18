@@ -29,6 +29,10 @@ body {
   display: none;
 }
 
+#backButton {
+  display: none;
+}
+
 .final {
   font-family: fantasy;
 }
