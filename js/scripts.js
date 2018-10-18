@@ -36,9 +36,6 @@ $(document).ready(function() {
 
     var highest = determineLargest(charScores);
 
-    console.log("Highest is at location: " + highest);
-    console.log("Score array is: " + charScores);
-
     if (highest === 0) {
       $("#quiz").hide();
       $("#harry").show();
