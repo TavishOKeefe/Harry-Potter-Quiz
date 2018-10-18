@@ -1,3 +1,59 @@
-$(document).ready(function() {
+var determineLargest = function(scores) {
+  var highest = 0;
+  for (i=1; i< scores.length; i++) {
+    if (scores[i] > scores[highest]) {
+      highest = i;
+    }
+  }
+  return highest;
+};
 
+$(document).ready(function() {
+  $("form#quizForm").submit(function(event) {
+    event.preventDefault();
+    var charScores = [0, 0, 0, 0, 0];
+    var question1Answer = parseInt($("input:radio[name=question1]:checked").val());
+    var question2Answer = parseInt($("input:radio[name=question2]:checked").val());
+    var question3Answer = parseInt($("input:radio[name=question3]:checked").val());
+    var question4Answer = parseInt($("input:radio[name=question4]:checked").val());
+    var question5Answer = parseInt($("input:radio[name=question5]:checked").val());
+    var question6Answer = parseInt($("input:radio[name=question6]:checked").val());
+    var question7Answer = parseInt($("input:radio[name=question7]:checked").val());
+    var question8Answer = parseInt($("input:radio[name=question8]:checked").val());
+    var question9Answer = parseInt($("input:radio[name=question9]:checked").val());
+    var question10Answer = parseInt($("input:radio[name=question10]:checked").val());
+
+    charScores[question1Answer]++;
+    charScores[question2Answer]++;
+    charScores[question3Answer]++;
+    charScores[question4Answer]++;
+    charScores[question5Answer]++;
+    charScores[question6Answer]++;
+    charScores[question7Answer]++;
+    charScores[question8Answer]++;
+    charScores[question9Answer]++;
+    charScores[question10Answer]++;
+
+    var highest = determineLargest(charScores);
+
+    console.log("Highest is at location: " + highest);
+    console.log("Score array is: " + charScores);
+
+    if (highest === 0) {
+      $("#quiz").hide();
+      $("#harry").show();
+    } else if (highest === 1) {
+      $("#quiz").hide();
+      $("#ron").show();
+    } else if (highest === 2) {
+      $("#quiz").hide();
+      $("#hermione").show();
+    } else if (highest === 3) {
+      $("#quiz").hide();
+      $("#dumbledore").show();
+    } else {
+      $("#quiz").hide();
+      $("#snape").show();
+    }
+  });
 });
