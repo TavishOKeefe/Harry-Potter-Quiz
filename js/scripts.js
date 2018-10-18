@@ -9,6 +9,17 @@ var determineLargest = function(scores) {
 };
 
 $(document).ready(function() {
+  $("form#nameField").submit(function(event) {
+    event.preventDefault();
+    var inputName = $("#getName").val();
+    if(inputName === "") {
+      $(".userName").text("No name given");
+    } else {
+      $(".userName").text(inputName);
+    }
+    $("#quizBody").show();
+    $("#intro").hide();
+  });
   $("form#quizForm").submit(function(event) {
     event.preventDefault();
     var charScores = [0, 0, 0, 0, 0];
@@ -37,22 +48,27 @@ $(document).ready(function() {
     var highest = determineLargest(charScores);
 
     if (highest === 0) {
+      $("#quizBody").hide();
       $("#quiz").hide();
       $("#harry").show();
       $("#backButton").show();
     } else if (highest === 1) {
+      $("#quizBody").hide();
       $("#quiz").hide();
       $("#ron").show();
       $("#backButton").show();
     } else if (highest === 2) {
+      $("#quizBody").hide();
       $("#quiz").hide();
       $("#hermione").show();
       $("#backButton").show();
     } else if (highest === 3) {
+      $("#quizBody").hide();
       $("#quiz").hide();
       $("#dumbledore").show();
       $("#backButton").show();
     } else {
+      $("#quizBody").hide();
       $("#quiz").hide();
       $("#snape").show();
       $("#backButton").show();

@@ -5,6 +5,10 @@ body {
   margin: 12px;
 }
 
+#quizBody {
+  display: none;
+}
+
 #quizForm {
   text-align: left;
 }
