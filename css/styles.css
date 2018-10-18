@@ -1,3 +1,9 @@
+body {
+  background-color: lightyellow;
+  text-align: center;
+  font-family: monospace;
+}
+
 #harry {
   display: none;
 }
